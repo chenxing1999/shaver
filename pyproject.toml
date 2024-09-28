@@ -22,6 +22,7 @@ dependencies = [
     "psutil",
     "scikit-learn",
     "lmdb",
+    "disutils",
 ]
 dynamic = ["version"]
 requires-python = ">=3.9"

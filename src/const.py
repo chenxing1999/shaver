@@ -4,9 +4,9 @@ from typing import Final
 DEFAULT_DICTIONARY: Final[dict] = {
     "criteo": {
         "deepfm": dict(
-            checkpoint_path="/home/xing/workspace/phd/shapley//checkpoints/criteo-deepfm-best.pth",
+            checkpoint_path="./checkpoints/criteo-deepfm-best.pth",
             shapley_value_path="./artifacts/criteo_res_v5/cols_shapley_field.pth",
-            freq_path="/home/xing/workspace/phd/shapley/my_code/artifacts/criteo/criteo_freq.bin",
+            freq_path="./artifacts/criteo/criteo_freq.bin",
             # wd=1e-5,
             # lr=1e-4,
             wd=1.3876614923531129e-05,
@@ -14,9 +14,9 @@ DEFAULT_DICTIONARY: Final[dict] = {
             batch_size=2048,
         ),
         "dcn": dict(
-            checkpoint_path="/home/xing/workspace/phd/shapley//checkpoints/criteo-dcn-best.pth",
+            checkpoint_path="./checkpoints/criteo-dcn-best.pth",
             shapley_value_path="./artifacts/criteo_res_v5-dcn/cols_shapley_field_dcn_criteo.pth",
-            freq_path="/home/xing/workspace/phd/shapley/my_code/artifacts/criteo/criteo_freq.bin",
+            freq_path="./criteo/criteo_freq.bin",
             wd=4.980568409796324e-05,
             lr=0.00016000142575522478,
             batch_size=8192,
@@ -24,9 +24,9 @@ DEFAULT_DICTIONARY: Final[dict] = {
     },
     "avazu": {
         "deepfm": dict(
-            checkpoint_path="/home/xing/workspace/phd/shapley//checkpoints/avazu-best-deepfm.pth",
+            checkpoint_path="./checkpoints/avazu-best-deepfm.pth",
             shapley_value_path="./artifacts/avazu_res_v5/cols_shapley_field.pth",
-            freq_path="/home/xing/workspace/phd/shapley/my_code/artifacts/avazu/avazu_freq.bin",
+            freq_path="./artifacts/avazu/avazu_freq.bin",
             # wd=3e-5,
             # lr=2e-5,
             lr=2.760593174284856e-05,
@@ -34,9 +34,9 @@ DEFAULT_DICTIONARY: Final[dict] = {
             batch_size=2048,
         ),
         "dcn": dict(
-            checkpoint_path="/home/xing/workspace/phd/shapley//checkpoints/avazu-dcn-best.pth",
-            shapley_value_path="./artifacts/avazu_res_v5-dcn/cols_shapley_field_codebook_mix.pth",
-            freq_path="/home/xing/workspace/phd/shapley/my_code/artifacts/avazu/avazu_freq.bin",
+            checkpoint_path="./checkpoints/avazu-dcn-best.pth",
+            shapley_value_path="./artifacts/avazu_res_v5-dcn/cols_shapley_field_codebook.pth",
+            freq_path="./artifacts/avazu/avazu_freq.bin",
             wd=1.0361109028617641e-05,
             lr=1.0361109028617641e-05,
             batch_size=8192,
@@ -44,17 +44,17 @@ DEFAULT_DICTIONARY: Final[dict] = {
     },
     "kdd": {
         "deepfm": dict(
-            checkpoint_path="/home/xing/workspace/phd/shapley/checkpoints/kdd-deepfm-best.pth",
+            checkpoint_path="./checkpoints/kdd-deepfm-best.pth",
             shapley_value_path="./artifacts/kdd-deepfm-v5/codebook.pth",
-            freq_path="/home/xing/workspace/phd/shapley/my_code/artifacts/kdd/kdd_freq.bin",
+            freq_path="./artifacts/kdd/kdd_freq.bin",
             lr=4.2496200892571215e-05,
             wd=1.1357382431638127e-05,
             batch_size=8192,
         ),
         "dcn": dict(
-            checkpoint_path="/home/xing/workspace/phd/shapley/checkpoints/kdd-dcn-best.pth",
+            checkpoint_path="./checkpoints/kdd-dcn-best.pth",
             shapley_value_path="./artifacts/kdd-dcn-v5/codebook.pth",
-            freq_path="/home/xing/workspace/phd/shapley/my_code/artifacts/kdd/kdd_freq.bin",
+            freq_path="./artifacts/kdd/kdd_freq.bin",
             lr=1.0792370095904069e-05,
             wd=3.6565362068177706e-05,
             batch_size=8192,
@@ -65,22 +65,22 @@ DEFAULT_DICTIONARY: Final[dict] = {
 
 DATASET_INFO: Final = {
     "criteo": dict(
-        train_test_info="/home/xing/workspace/phd/recsys-benchmark/dataset/ctr/criteo/criteo-common-split/train_test_val_info.bin",
+        train_test_info="./dataset/ctr/criteo/criteo-common-split/train_test_val_info.bin",
         dataset_name="train",
-        dataset_path="/home/xing/workspace/phd/recsys-benchmark/dataset/ctr/criteo/train.txt",
-        cache_path="/home/xing/workspace/phd/recsys-benchmark/dataset/ctr/criteo/criteo-fm",
+        dataset_path="./dataset/ctr/criteo/train.txt",
+        cache_path="./dataset/ctr/criteo/criteo-fm",
     ),
     "avazu": dict(
-        train_test_info="/home/xing/workspace/phd/recsys-benchmark/dataset/ctr/avazu/train_test_info.bin",
+        train_test_info="./dataset/ctr/avazu/train_test_info.bin",
         dataset_name="train",
-        dataset_path="/home/xing/workspace/phd/recsys-benchmark/dataset/ctr/avazu/train",
-        cache_path="/home/xing/workspace/phd/recsys-benchmark/dataset/ctr/avazu/avazu-fm",
+        dataset_path="./dataset/ctr/avazu/train",
+        cache_path="./dataset/ctr/avazu/avazu-fm",
     ),
     "kdd": dict(
-        train_test_info="/home/xing/workspace/phd/run-code/dataset/ctr/kdd/preprocessed/train_test_val_info.bin",
+        train_test_info="./dataset/ctr/kdd/preprocessed/train_test_val_info.bin",
         dataset_name="train",
-        dataset_path="/home/xing/workspace/phd/run-code/dataset/ctr/kdd/track2/training.txt",
-        cache_path="/home/xing/workspace/phd/run-code/.kdd",
+        dataset_path="dataset/ctr/kdd/track2/training.txt",
+        cache_path=".kdd",
     ),
 }
 

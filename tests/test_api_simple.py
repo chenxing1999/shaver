@@ -1,15 +1,16 @@
-from src.sage_row import RowDefaultImputer, sage_shapley_field_ver
-from src.mock_cls import MockModel, MockDataset
-from src.utils import set_seed
-from torch.utils.data import DataLoader
-from torch.nn import functional as F
 import torch
+from torch.nn import functional as F
+from torch.utils.data import DataLoader
+
+from src.mock_cls import MockDataset, MockModel
+from src.sage_row import RowDefaultImputer, sage_shapley_field_ver
+from src.utils import set_seed
 
 set_seed(2023)
 
-def test_algo1_api():
 
-    field_dims = [1,2,3]
+def test_algo1_api():
+    field_dims = [1, 2, 3]
     num_data = 10
 
     # Model should assume offsets included from Dataset
@@ -22,14 +23,13 @@ def test_algo1_api():
 
     loader = DataLoader(dataset, batch_size=4)
 
-
     n_iters = 1000
     device = "cpu"
 
     imputer = RowDefaultImputer(
         model,
-        use_sigmoid=True, # Return sigmoid output,
-        base_value=0, # Codebook value
+        use_sigmoid=True,  # Return sigmoid output,
+        base_value=0,  # Codebook value
     )
     value, std = sage_shapley_field_ver(
         model,
@@ -54,7 +54,7 @@ def test_algo1_api():
         loss1 += F.binary_cross_entropy_with_logits(y_pred, y, reduction="sum")
 
     loss2 = 0
-    model.embedding.weight.data[:] = 0 # set S to empty
+    model.embedding.weight.data[:] = 0  # set S to empty
     for x, y in loader:
         x, y = x.to(device), y.to(device)
         with torch.no_grad():
@@ -66,4 +66,4 @@ def test_algo1_api():
     loss = loss / num_data
 
     # ensure efficiency
-    assert (value.sum() - loss).abs() < 1e-3, f'{value.sum()} != {loss / num_data}'
+    assert (value.sum() - loss).abs() < 1e-3, f"{value.sum()} != {loss / num_data}"
