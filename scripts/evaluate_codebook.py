@@ -160,4 +160,4 @@ for ratio in ratios:
     emb = CodebookEmb(mask, weight, base_value, n_bits=args.n_bits)
     model.embedding = emb
 
-    print(validate_epoch(loader, model, device, original_model))
+    print(validate_epoch(loader, model, device))

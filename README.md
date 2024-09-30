@@ -15,7 +15,7 @@ pip install -e '.[dev]'
 
 # Quick start
 
-See notebooks xxx for running with sample dataset and sample model
+See [this notbook](notebooks/main.ipynb) for running with sample dataset and sample model.
 
 To run with full dataset, please get the full checkpoints and datasets split from github.com/chenxing1999/recsys-benchmarks. You can also contact us after this paper is accepted (The dataset size and checkpoint size is too large to share anonymously).
 
@@ -78,11 +78,11 @@ Run train:
 sparse_rate=0.8
 python scripts/train.py $MODEL_NAME $DATASET_NAME $sparse_rate \
     --shapley_value_path artifacts/shapley_value.bin\
-    --run_name codebook-80
+    --run_name codebook80
 
 # If not use codebook
 python scripts/train.py $MODEL_NAME $DATASET_NAME $sparse_rate \
     --shapley_value_path artifacts/shapley_value_zero.bin\
     --disable_codebook\
-    --run_name zero-80
+    --run_name zero80
 ```
