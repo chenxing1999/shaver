@@ -15,9 +15,9 @@ pip install -e '.[dev]'
 
 # Quick start
 
-See [this notbook](notebooks/main.ipynb) for running with sample dataset and sample model.
+See [this notebook](notebooks/main.ipynb) for running with sample dataset and sample model.
 
-To run with full dataset, please get the full checkpoints and datasets split from github.com/chenxing1999/recsys-benchmarks. You can also contact us after this paper is accepted (The dataset size and checkpoint size is too large to share anonymously).
+To run with full dataset, please get the full checkpoints and datasets split from github.com/chenxing1999/recsys-benchmarks.
 
 Then modify `src/const.py` for list of path to dataset and checkpoint accordingly.
 
