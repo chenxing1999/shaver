@@ -161,4 +161,5 @@ cython_debug/
 
 x_to_idx_10percent/
 artifacts/
+outs/
 *.pth
