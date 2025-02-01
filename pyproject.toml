@@ -1,0 +1,81 @@
+[build-system]
+requires = [
+    "setuptools>=61",
+    "setuptools_scm[toml]",
+    "wheel",
+    "mypy",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Shaver"
+description = "Code for Compressing Content-based Recommender Systems in One Shot: A Cooperative Game Perspective"
+license = {file = "LICENSE"}
+dependencies = [
+    "numpy",
+    "torch",
+    "einops",
+    "loguru",
+    "torch_tb_profiler",
+    "tensorboard",
+    "optuna",
+    "psutil",
+    "scikit-learn",
+    "lmdb",
+    "disutils",
+]
+dynamic = ["version"]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "pytest",
+    "coverage",
+    "pre-commit",
+    "jupyterlab",
+]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+namespaces = false
+where=["."]
+include=["src"]
+
+[tool.setuptools.package-data]
+assets = ["*.json"]
+
+
+[tool.setuptools_scm]
+version_scheme = "no-guess-dev"
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+src_paths = ["scripts", "src", "test"]
+
+[tool.mypy]
+mypy_path = "src/stubs/"
+allow_redefinition = true
