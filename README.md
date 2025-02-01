@@ -1,6 +1,6 @@
 # Shaver
 
-The code for paper Compressing Content-based Recommender Systems in One Shot: A Cooperative Game Perspective
+The code for paper On-device Content-based Recommendation with Single-shot Embedding Pruning: A Cooperative Game Perspective (WWW'25 - Oral)
 
 # Installation
 
@@ -85,4 +85,17 @@ python scripts/train.py $MODEL_NAME $DATASET_NAME $sparse_rate \
     --shapley_value_path artifacts/shapley_value_zero.bin\
     --disable_codebook\
     --run_name zero80
+```
+
+# Citation
+If you find this repo helpful, please cite the below paper:
+```
+@inproceedings{
+tran2025ondevice,
+title={On-device Content-based Recommendation with Single-shot Embedding Pruning: A Cooperative Game Perspective},
+author={Hung Vinh Tran and Tong Chen and Guanhua Ye and Quoc Viet Hung Nguyen and Kai Zheng and Hongzhi Yin},
+booktitle={THE WEB CONFERENCE 2025},
+year={2025},
+url={https://openreview.net/forum?id=k03hiubX3F}
+}
 ```
